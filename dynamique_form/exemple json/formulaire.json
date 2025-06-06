@@ -1,0 +1,233 @@
+{
+  "validateOnChange": true,
+  "validateOnBlur": true,
+  "disableSubmitOnError": true,
+  "submitButton": {
+    "text": "Créer le compte"
+  },
+  "fields": [
+    {
+      "name": "firstName",
+      "label": "Prénom",
+      "type": "text",
+      "required": true,
+      "placeholder": "Entrez votre prénom",
+      "validation": {
+        "required": true,
+        "minLength": 2,
+        "maxLength": 50,
+        "requiredMessage": "Le prénom est obligatoire",
+        "minLengthMessage": "Le prénom doit contenir au moins 2 caractères"
+      },
+      "helpText": "Votre prénom tel qu'il apparaît sur vos documents officiels"
+    },
+    {
+      "name": "lastName",
+      "label": "Nom de famille",
+      "type": "text",
+      "required": true,
+      "placeholder": "Entrez votre nom",
+      "validation": {
+        "required": true,
+        "minLength": 2,
+        "maxLength": 50,
+        "requiredMessage": "Le nom est obligatoire",
+        "minLengthMessage": "Le nom doit contenir au moins 2 caractères"
+      }
+    },
+    {
+      "name": "email",
+      "label": "Adresse e-mail",
+      "type": "email",
+      "required": true,
+      "placeholder": "exemple@email.com",
+      "validation": {
+        "required": true,
+        "pattern": "^[^\\s@]+@[^\\s@]+\\.[^\\s@]+$",
+        "requiredMessage": "L'adresse e-mail est obligatoire",
+        "patternMessage": "Veuillez entrer une adresse e-mail valide"
+      },
+      "helpText": "Nous utiliserons cette adresse pour vous contacter"
+    },
+    {
+      "name": "password",
+      "label": "Mot de passe",
+      "type": "password",
+      "required": true,
+      "placeholder": "Mot de passe sécurisé",
+      "validation": {
+        "required": true,
+        "minLength": 8,
+        "pattern": "^(?=.*[a-z])(?=.*[A-Z])(?=.*\\d)(?=.*[@$!%*?&])[A-Za-z\\d@$!%*?&]",
+        "requiredMessage": "Le mot de passe est obligatoire",
+        "minLengthMessage": "Le mot de passe doit contenir au moins 8 caractères",
+        "patternMessage": "Le mot de passe doit contenir au moins une majuscule, une minuscule, un chiffre et un caractère spécial"
+      }
+    },
+    {
+      "name": "confirmPassword",
+      "label": "Confirmer le mot de passe",
+      "type": "password",
+      "required": true,
+      "placeholder": "Confirmez votre mot de passe",
+      "validation": {
+        "required": true,
+        "requiredMessage": "La confirmation du mot de passe est obligatoire"
+      }
+    },
+    {
+      "name": "age",
+      "label": "Âge",
+      "type": "number",
+      "required": true,
+      "validation": {
+        "required": true,
+        "min": 13,
+        "max": 120,
+        "requiredMessage": "L'âge est obligatoire",
+        "minMessage": "Vous devez avoir au moins 13 ans",
+        "maxMessage": "Veuillez entrer un âge valide"
+      }
+    },
+    {
+      "name": "birthDate",
+      "label": "Date de naissance",
+      "type": "date",
+      "required": true,
+      "validation": {
+        "required": true,
+        "requiredMessage": "La date de naissance est obligatoire"
+      }
+    },
+    {
+      "name": "gender",
+      "label": "Genre",
+      "type": "radio",
+      "required": false,
+      "options": [
+        { "value": "male", "label": "Homme" },
+        { "value": "female", "label": "Femme" },
+        { "value": "other", "label": "Autre" },
+        { "value": "prefer_not_to_say", "label": "Préfère ne pas dire" }
+      ]
+    },
+    {
+      "name": "country",
+      "label": "Pays",
+      "type": "select",
+      "required": true,
+      "placeholder": "Sélectionnez votre pays",
+      "options": [
+        { "value": "fr", "label": "France" },
+        { "value": "be", "label": "Belgique" },
+         { "value": "bj", "label": "Bénin" },
+        { "value": "ch", "label": "Suisse" },
+        { "value": "ca", "label": "Canada" },
+        { "value": "ma", "label": "Maroc" },
+        { "value": "tn", "label": "Tunisie" },
+        { "value": "sn", "label": "Sénégal" },
+        { "value": "ci", "label": "Côte d'Ivoire" },
+        { "value": "other", "label": "Autre" }
+      ],
+      "validation": {
+        "required": true,
+        "requiredMessage": "Veuillez sélectionner votre pays"
+      }
+    },
+    {
+      "name": "phone",
+      "label": "Numéro de téléphone",
+      "type": "tel",
+      "required": false,
+      "placeholder": "+229 01 xx xx xx xx",
+      "validation": {
+        "pattern": "^[+]?[0-9\\s\\-\\(\\)]+$",
+        "patternMessage": "Veuillez entrer un numéro de téléphone valide"
+      },
+      "helpText": "Format international recommandé"
+    },
+    {
+      "name": "website",
+      "label": "Site web personnel",
+      "type": "url",
+      "required": false,
+      "placeholder": "https://www.example.com",
+      "validation": {
+        "pattern": "^https?://.*",
+        "patternMessage": "L'URL doit commencer par http:// ou https://"
+      }
+    },
+    {
+      "name": "bio",
+      "label": "Biographie",
+      "type": "textarea",
+      "required": false,
+      "placeholder": "Parlez-nous de vous...",
+      "rows": 4,
+      "validation": {
+        "maxLength": 500,
+        "maxLengthMessage": "La biographie ne peut pas dépasser 500 caractères"
+      },
+      "helpText": "Maximum 500 caractères"
+    },
+    {
+      "name": "experienceLevel",
+      "label": "Niveau d'expérience",
+      "type": "range",
+      "required": false,
+      "min": 0,
+      "max": 10,
+      "step": 1,
+      "defaultValue": 5,
+      "helpText": "0 = débutant, 10 = expert"
+    },
+    {
+      "name": "profilePicture",
+      "label": "Photo de profil",
+      "type": "file",
+      "required": false,
+      "accept": "image/*",
+      "validation": {
+        "accept": "image/*",
+        "maxSize": 2097152,
+        "acceptMessage": "Seules les images sont acceptées",
+        "maxSizeMessage": "L'image ne doit pas dépasser 2 MB"
+      },
+      "helpText": "Formats acceptés : JPG, PNG, GIF (max. 2 MB)"
+    },
+    {
+      "name": "interests",
+      "label": "Centres d'intérêt",
+      "type": "select",
+      "required": false,
+      "placeholder": "Sélectionnez vos centres d'intérêt",
+      "options": [
+        { "value": "technology", "label": "Technologie" },
+        { "value": "sports", "label": "Sports" },
+        { "value": "music", "label": "Musique" },
+        { "value": "travel", "label": "Voyages" },
+        { "value": "cooking", "label": "Cuisine" },
+        { "value": "reading", "label": "Lecture" },
+        { "value": "art", "label": "Art" },
+        { "value": "gaming", "label": "Jeux vidéo" }
+      ]
+    },
+    {
+      "name": "newsletter",
+      "label": "Je souhaite recevoir la newsletter",
+      "type": "checkbox",
+      "defaultValue": false,
+      "helpText": "Vous pouvez vous désabonner à tout moment"
+    },
+    {
+      "name": "terms",
+      "label": "J'accepte les conditions d'utilisation et la politique de confidentialité",
+      "type": "checkbox",
+      "required": true,
+      "validation": {
+        "required": true,
+        "requiredMessage": "Vous devez accepter les conditions d'utilisation pour continuer"
+      }
+    }
+  ]
+}

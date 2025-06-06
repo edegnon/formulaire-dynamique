@@ -1,0 +1,5 @@
+The DynamicForm component provides an easy way to create flexible, validated forms in React. Simply pass a configuration object (config) defining your form fields (text inputs, selects, checkboxes, etc.), validation rules, and form behavior options like validateOnChange. The component handles all state management, validation, and submission automatically - just implement the onSubmit callback to receive the validated form data. Key features include built-in validation for required fields, text length, file types, and custom patterns, with options to customize error messages or add completely custom validation logic. The form automatically prevents submission when errors exist (configurable) and provides visual feedback for invalid fields.
+************************************************************************************************************************
+import DynamicForm from 'formulaire-dynamique';
+import 'formulaire-dynamique/dist/styles.css';
+import formConfig from './formConfig.json'
